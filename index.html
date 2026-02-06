@@ -13,8 +13,8 @@
       --bg1: #ffd6e7;
       --bg2: #ffeef6;
       --card: #ffffffcc;
-      --yes: #ff3b7a;
-      --yesHover: #ff1f68;
+      --Sii: #ff3b7a;
+      --SiiHover: #ff1f68;
     }
 
     * { box-sizing: border-box; }
@@ -85,12 +85,12 @@
       transition: transform .12s ease, background .12s ease;
     }
 
-    #yesBtn {
+    #SiiBtn {
       left: 18%;
-      background: var(--yes);
+      background: var(--Sii);
       color: #fff;
     }
-    #yesBtn:hover { background: var(--yesHover); }
+    #SiiBtn:hover { background: var(--SiiHover); }
 
     #noBtn {
       left: 62%;
@@ -139,14 +139,14 @@
     <h1>Mi Fernandito, quieres ser mi San Valentiiiiin?</h1>
 
     <section class="button-zone" id="zone">
-      <button id="yesBtn">Yes</button>
+      <button id="SiiBtn">Sii</button>
       <button id="noBtn">No</button>
     </section>
 
     <div class="hint" id="hint">“No” dime que chiii </div>
 
     <section class="result" id="result">
-      <h2>YAY! 🎉</h2>
+      <h2>Chiiiii mi esposito hermoso! 🎉</h2>
       <img
         class="fireworks"
         src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHIzZ2Zzajl0bWlsOHR4YmUzdDE2bHdjbXQ1NnVkcjNubmU3OWF6cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/z62e3wqk3ruX4KZiNB/giphy.gif"
@@ -157,7 +157,7 @@
 
   <script>
     const zone = document.getElementById("zone");
-    const yesBtn = document.getElementById("yesBtn");
+    const SiiBtn = document.getElementById("SiiBtn");
     const noBtn = document.getElementById("noBtn");
     const result = document.getElementById("result");
     const hint = document.getElementById("hint");
@@ -206,10 +206,10 @@
       }, 300);
     }
 
-    let yesScale = 1;
-    function growYes() {
-      yesScale = Math.min(2.2, yesScale + 0.1);
-      yesBtn.style.transform = `translateY(-50%) scale(${yesScale})`;
+    let SiiScale = 1;
+    function growSii() {
+      SiiScale = Math.min(2.2, SiiScale + 0.1);
+      SiiBtn.style.transform = `translateY(-50%) scale(${SiiScale})`;
     }
 
     function clamp(n, min, max) {
@@ -236,7 +236,7 @@
       noBtn.style.top = newTop + "px";
       noBtn.style.transform = "none";
 
-      growYes();
+      growSii();
     }
 
     zone.addEventListener("pointermove", e => {
@@ -250,7 +250,7 @@
 
     noBtn.addEventListener("click", e => e.preventDefault());
 
-    yesBtn.addEventListener("click", () => {
+    SiiBtn.addEventListener("click", () => {
       zone.style.display = "none";
       hint.style.display = "none";
       result.style.display = "block";
@@ -260,4 +260,5 @@
   </script>
 </body>
 </html>
+
 
