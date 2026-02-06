@@ -30,7 +30,6 @@
       padding: 16px;
     }
 
-    /* FULL-SCREEN CONFETTI CANVAS */
     #confettiCanvas {
       position: fixed;
       inset: 0;
@@ -133,12 +132,9 @@
   <canvas id="confettiCanvas"></canvas>
 
   <main class="card">
-    <!-- PANDA IMAGE (REPLACED SVG ONLY) -->
-    <img
-      class="art"
-      src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Grosser_Panda.JPG"
-      alt="Panda"
-    />
+
+    <!-- TU IMAGEN DEL PANDA -->
+    <img class="art" src="doc.jpg" alt="Panda" />
 
     <h1>Mi Fernandito, quieres ser mi San Valentiiiiin?</h1>
 
@@ -147,14 +143,13 @@
       <button id="noBtn">No</button>
     </section>
 
-    <!-- HINT -->
-    <div class="hint" id="hint">“No” seems a bit shy 😈</div>
+    <div class="hint" id="hint">“No” Dime que chiii </div>
 
     <section class="result" id="result">
-      <h2>YAY! 🎉</h2>
+      <h2>siiii! 🎉</h2>
       <img
         class="fireworks"
-        src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif"
+        src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHIzZ2Zzajl0bWlsOHR4YmUzdDE2bHdjbXQ1NnVkcjNubmU3OWF6cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/z62e3wqk3ruX4KZiNB/giphy.gif"
         alt="Fireworks"
       />
     </section>
@@ -167,7 +162,6 @@
     const result = document.getElementById("result");
     const hint = document.getElementById("hint");
 
-    /* ---------- CONFETTI ---------- */
     const confettiCanvas = document.getElementById("confettiCanvas");
 
     function resizeConfettiCanvas() {
@@ -212,14 +206,12 @@
       }, 300);
     }
 
-    /* ---------- YES BUTTON GROWS ---------- */
     let yesScale = 1;
     function growYes() {
       yesScale = Math.min(2.2, yesScale + 0.1);
       yesBtn.style.transform = `translateY(-50%) scale(${yesScale})`;
     }
 
-    /* ---------- NO BUTTON RUNS AWAY ---------- */
     function clamp(n, min, max) {
       return Math.max(min, Math.min(max, n));
     }
@@ -258,10 +250,9 @@
 
     noBtn.addEventListener("click", e => e.preventDefault());
 
-    /* ---------- YES CLICK ---------- */
     yesBtn.addEventListener("click", () => {
       zone.style.display = "none";
-      hint.style.display = "none";     // HIDE THE HINT
+      hint.style.display = "none";
       result.style.display = "block";
       resizeConfettiCanvas();
       fullScreenConfetti();
